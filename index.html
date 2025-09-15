@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Chente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0"
+  }
+}
+</script>
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .animate-fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
+    .animate-slide-in-left { animation: slideInLeft 0.4s ease-out forwards; }
+    .animate-slide-in-right { animation: slideInRight 0.4s ease-out forwards; }
+    
+    .typing-indicator .typing-dot {
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+    .typing-indicator .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    
+    .prose pre {
+      position: relative;
+      background-color: #282c34;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      overflow-x: auto;
+      color: #abb2bf;
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1a202c; }
+    ::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #718096; }
+    .prose code { background-color: transparent; color: inherit; font-size: 0.9em; }
+    .prose :not(pre) > code {
+      background-color: #282c34;
+      padding: 0.2em 0.4em;
+      margin: 0;
+      font-size: 85%;
+      border-radius: 6px;
+    }
+  </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-900 text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
